@@ -1,3 +1,4 @@
+// ---------------------------------------------
 // Ex 1 
 // ---------------------------------------------
 const numArray = [0, 2, 5, 100, 3, 10, 4];
@@ -31,6 +32,7 @@ console.log("Original array: " + numArray);
 numArray.sort((a, b) => a - b);
 console.log("Sorted array: " + numArray);
 
+// ---------------------------------------------
 // Ex 2
 // ---------------------------------------------
 function sameValuesArray(arrA, arrB) {
@@ -59,7 +61,7 @@ function sameValuesArray(arrA, arrB) {
             }
         }
     }
-    
+
     newArr.sort((a, b) => a - b);
     return newArr;
 }
@@ -71,4 +73,46 @@ const arrB = [2, 2, 2, 1, 3, 1, 2];
 console.log("2nd. Array: " + arrB);
 let newArr = sameValuesArray(arrA, arrB)
 console.log("newArr: " + newArr);
+// ---------------------------------------------
+
+
+// ---------------------------------------------
+// Ex 3 - matrix 
+// ---------------------------------------------
+let items = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+];
+
+function print2DArrayElements(items) {
+    for (let i = 0; i < items.length; i++) {
+        console.log(items[i]);
+    }
+}
+document.write("<br>");
+console.log("Input 2D array");
+print2DArrayElements(items);
+
+
+function average(items) {
+    let sum = 0;
+    let avg = 0;
+    let totalLength = 0;
+    for (let i = 0; i < items.length; i++) {
+        totalLength += items[i].length;
+
+        for (let j = 0; j < items[i].length; j++) {
+            sum += items[i][j]
+        }
+    }
+
+    if (totalLength != 0) {
+        avg = sum / totalLength;
+    }
+    return avg;
+}
+
+let avg = average(items);
+console.log("averaget of items: " +avg);
 // ---------------------------------------------
