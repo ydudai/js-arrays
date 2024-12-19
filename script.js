@@ -114,5 +114,72 @@ function average(items) {
 }
 
 let avg = average(items);
-console.log("averaget of items: " +avg);
+console.log("Average of items: " + avg);
+// ---------------------------------------------
+
+
+// ---------------------------------------------
+// Ex 4 - Remove selected element from array 
+// ---------------------------------------------
+const nums = [10, 30, 20, 10, 40, 20];
+//const nums = [20, 20, 10, 30, 20, 10, 40, 20];
+//const nums = [10, 20, 20, 10, 20, 20];
+
+console.log("Original array: " + nums);
+
+function removeElementFromArray(arr, searchElement) {
+    console.log("searchElement: " + searchElement);
+
+    let inds = findAllIndices(arr, searchElement);
+    console.log("Found indices: " + inds);
+
+    let numPops = 0;
+    let lastIndex = nums.length - 1;
+    let popedArr = [];
+    let k = 0;
+
+    for (let i = inds.length - 1; i >= 0; i--) {
+        numPops = lastIndex - inds[i] + 1;
+        for (let j = 0; j < numPops; j++) {
+            popedArr[k] = nums.pop();
+            k++;
+            lastIndex -= 1;
+        }
+
+        pos = inds[i];
+        for (let n = popedArr.length - 2; n >= 0; --n) {
+            nums[pos] = popedArr[n];
+            pos += 1;
+        }
+        lastIndex = nums.length - 1;
+        popedArr = [];
+        k = 0;
+        //console.log("nums: " + nums );
+    }
+
+}
+
+function findAllIndices(arr, searchElement) {
+    let inds = [];
+    let k = 0;
+    let fromIndex = 0;
+    let index = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        index = nums.indexOf(searchElement, fromIndex);
+        if (index != -1) {
+            inds[k] = index;
+            k++;
+            fromIndex = index + 1;
+            if (fromIndex > (nums.length - 1)) {
+                break;
+            }
+        }
+    }
+
+    return inds;
+}
+
+removeElementFromArray(nums, 20);
+console.log("Result: " +  nums);
 // ---------------------------------------------
