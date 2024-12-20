@@ -117,10 +117,6 @@ let avg = average(items);
 console.log("Average of items: " + avg);
 // ---------------------------------------------
 
-
-// ---------------------------------------------
-// Ex 4 - Remove selected element from array 
-// ---------------------------------------------
 const nums = [10, 30, 20, 10, 40, 20];
 //const nums = [20, 20, 10, 30, 20, 10, 40, 20];
 //const nums = [10, 20, 20, 10, 20, 20];
@@ -181,5 +177,67 @@ function findAllIndices(arr, searchElement) {
 }
 
 removeElementFromArray(nums, 20);
-console.log("Result: " +  nums);
+console.log("Result: " + nums);
 // ---------------------------------------------
+
+// ---------------------------------------------
+// Arrow functions - Ex1 
+// ---------------------------------------------
+let isLong = (str) => {
+    if (String(str).length > 5) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+let isLongB = (str) => {
+    let isLong = String(str).length > 5;
+    if (isLong) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+let isLongC = (str) => {
+    return String(str).length > 5;
+};
+
+let isLongD = (str) => { return String(str).length > 5 };
+
+console.log("str: Yafa " + isLongD("Yafa"));
+console.log("str: Yonatan " + isLongD("Yonatan"));
+
+
+// ---------------------------------------------
+// Arrow functions - Ex2
+// ---------------------------------------------
+let isEdgesEqual = (str) => {
+    let message = "";
+    if (str.charAt(0) == str.charAt(str.length - 1)) {
+        message = "Edges Are Equal"
+    } else {
+        message = "Edges Are note Equal"
+    }
+    return message;
+}
+
+console.log(isEdgesEqual("AxxxA"));
+console.log(isEdgesEqual("AxxxB"));
+
+
+// ---------------------------------------------
+// Arrow functions - Ex3
+// ---------------------------------------------
+let isLastUppercase = (str) => {
+     let ch = str.charAt(str.length - 1);
+     let newCh = ch.toUpperCase();
+     if(ch == newCh) {
+        return true;
+     } else {
+        return false;
+     }
+}
+console.log(isLastUppercase("Axxxa"));
+console.log(isLastUppercase("AxxxB"));
