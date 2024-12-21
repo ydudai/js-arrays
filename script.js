@@ -329,3 +329,23 @@ let ar = [2, 4, 1, 2, 7, 2, 8];
 let newAr = ar.filter( (e, i) => i != 3);
 console.log(ar);
 console.log(newAr);
+
+
+// ---------------------------------------------
+// Spread functions - Ex 6
+// ---------------------------------------------
+const parents = ['Yossi', 'Yafa'];
+let family = [...parents, 'Aya', 'Amir', 'Chen', 'Yonatan'];
+console.log(parents);
+console.log(family);
+
+
+// ---------------------------------------------
+// Spread functions - Ex 7
+// ---------------------------------------------
+const myparents = ['Yossi', 'Yafa'];
+const children = ['Aya', 'Amir', 'Chen', 'Yonatan'];
+let myfamily = [...myparents, ...children];
+console.log(myparents);
+console.log(children);
+console.log(myfamily);
