@@ -276,6 +276,7 @@ if(arr.length == 0) {
 // console.log(chars);
 // console.log(cases);
 
+// Map Foreach functions - Ex 2 with arrow function
 let chars = ['A', 'B', 'c', 'd', 'E'];
 let cases = chars.map( (e) => {
     if(e.toUpperCase() == e ) {
@@ -286,3 +287,45 @@ let cases = chars.map( (e) => {
 })
 console.log(chars);
 console.log(cases);
+
+
+// ---------------------------------------------
+// Map Foreach functions - Ex 3
+// ---------------------------------------------
+let char = ['a', 'b', 'c', 'd', 'e', 'f'];
+let charInds = char.map( (e, i) => {
+    if(i%2 == 0 ) {
+        return i;
+    } else {
+        return e;
+    }
+});
+console.log(char);
+console.log(charInds);
+
+
+// ---------------------------------------------
+// Filter functions - Ex 4
+// ---------------------------------------------
+// let ages = [1, 3, 20, 25, 9, 12, 14, 30];
+// let olderAges = ages.filter( (e) => {
+//     if(e > 18 ) {
+//         return e;
+//     } 
+// });
+// console.log(ages);
+// console.log(olderAges);
+
+let ages = [1, 3, 20, 25, 9, 12, 14, 30];
+let olderAges = ages.filter( (e) => e > 18);
+console.log(ages);
+console.log(olderAges);
+
+
+// ---------------------------------------------
+// Filter functions - Ex 5
+// ---------------------------------------------
+let ar = [2, 4, 1, 2, 7, 2, 8];
+let newAr = ar.filter( (e, i) => i != 3);
+console.log(ar);
+console.log(newAr);
