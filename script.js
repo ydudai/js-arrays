@@ -231,13 +231,58 @@ console.log(isEdgesEqual("AxxxB"));
 // Arrow functions - Ex3
 // ---------------------------------------------
 let isLastUppercase = (str) => {
-     let ch = str.charAt(str.length - 1);
-     let newCh = ch.toUpperCase();
-     if(ch == newCh) {
+    let ch = str.charAt(str.length - 1);
+    let newCh = ch.toUpperCase();
+    if (ch == newCh) {
         return true;
-     } else {
+    } else {
         return false;
-     }
+    }
 }
 console.log(isLastUppercase("Axxxa"));
 console.log(isLastUppercase("AxxxB"));
+// ---------------------------------------------
+
+
+// ---------------------------------------------
+// Map Foreach functions - Ex 1
+// ---------------------------------------------
+let numbers = [1, 3, 7, 8, 9, 12, 14, 18];
+//let numbers = [1, 7, 8, 14, 19];
+let arr = [];
+numbers.forEach(function (e, index) {
+    if(e%3 == 0) {
+        arr.push(index + " " + e)
+    } 
+});
+
+if(arr.length == 0) {
+    console.log("The array is not devided by 3")
+} else {
+    console.log(arr);
+}
+
+// ---------------------------------------------
+// Map Foreach functions - Ex 2
+// ---------------------------------------------
+// let chars = ['A', 'B', 'c', 'd', 'E'];
+// let cases = chars.map(function ul(e){
+//     if(e.toUpperCase() == e ) {
+//         return 'U';
+//     } else {
+//         return 'L';
+//     }
+// })
+// console.log(chars);
+// console.log(cases);
+
+let chars = ['A', 'B', 'c', 'd', 'E'];
+let cases = chars.map( (e) => {
+    if(e.toUpperCase() == e ) {
+        return 'U';
+    } else {
+        return 'L';
+    }
+})
+console.log(chars);
+console.log(cases);
